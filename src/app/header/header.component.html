@@ -1,0 +1,34 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <p-image src="assets/images/logo.png" alt="Image" width="50"></p-image>
+      <a class="navbar-brand" href="#">Tamil Marine Aquarium</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ">
+    
+          <li class="nav-item">
+            <p-button label="Home" styleClass="p-button-link" (onClick)="processHomeScreen()"></p-button>
+          </li>
+          <li class="nav-item">
+            <p-button label="Shop" styleClass="p-button-link"></p-button>
+          </li>
+          <li class="nav-item">
+            <p-button label="Login/Register" styleClass="p-button-link" (onClick)="processLoginScreen()"></p-button>
+          </li>
+    
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end" style="text-align: right;">
+          <li class="nav-item">
+            <button pButton id="facebookBtn"><i class="pi pi-facebook"></i></button>
+          </li>
+          <li class="nav-item">
+            <button pButton id="instagarmBtn"><i class="pi pi-instagram"></i></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+  </header>
