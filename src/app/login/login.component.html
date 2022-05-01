@@ -1,16 +1,62 @@
 <div class="jumbotron bg-transparent text-center">
-    <div *ngIf="!user" class="card text-center">
-       <h6 class="card- header "> Social Login Demo
-       </h6>
+    <div *ngIf="show" class="card text-center">
+      
        <div class="card- block">
-          <h4 class="card-title ">Not signed in</h4>
-          <p class="card-text ">Sign in with</p>
-       </div>
-       <div class="card-block">
-         <button pButton id="instagarmBtn"><i class="pi pi-google" (click)="signInWithGoogle()"></i></button>
-       </div>
+       <p class="card-text ">Sign in with UserName Password</p>
+      </div>
+      <div class="card-block">
+        <button pButton id="usernameSignIn"><i class="pi pi-sign-in" (click)="loginUserNamePwd()"></i></button>
+      </div>
+      <div class="card- block">
+         <p class="card-text ">Register User</p>
+        </div>
+        <div class="card-block">
+          <button pButton id="usernameSignIn"><i class="pi pi-user-plus" (click)="registerUser()"></i></button>
+        </div>
+        <div class="card- block">
+         <h4 class="card-title ">Not signed in</h4>
+         <p class="card-text ">Sign in with</p>
+      </div>
+      <div class="card-block">
+        <button pButton id="instagarmBtn"><i class="pi pi-google" (click)="signInWithGoogle()"></i></button>
+      </div>
     </div>
-    <div *ngIf="user" class="card text-center">
+    <div *ngIf="!show">
+      <form #f="ngForm">
+         <!-- Email input -->
+         <div class="form-outline mb-4">
+            <input type="text" pInputText placeholder="Username" [(ngModel)]="loginUsername" id="loginUsername" name="loginUsername">      
+           <label class="form-label" for="loginUsername">User Name</label>
+         </div>
+       
+         <!-- Password input -->
+         <div class="form-outline mb-4">
+           <p-password [(ngModel)]="loginPassword" [toggleMask]="true" id="loginpassword" name="loginpassword"></p-password> 
+           <label class="form-label" for="loginpassword">Password</label>
+         </div>
+       
+         <!-- 2 column grid layout for inline styling -->
+         <div class="row mb-4">
+           <div class="col d-flex justify-content-center">
+             <!-- Checkbox -->
+             <div class="form-check">
+               <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+               <label class="form-check-label" for="form2Example31"> Remember me </label>
+             </div>
+           </div>
+       
+           <div class="col">
+             <!-- Simple link -->
+             <a href="#!">Forgot password?</a>
+           </div>
+         </div>
+       
+         <!-- Submit button -->
+         <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+         
+       </form>
+   </div>
+    <!-- <div *ngIf="user && show" class="card text-center">
        <h6 class="card- header "> Social Login Demo
        </h6>
        <div class="card-block"></div>
@@ -22,5 +68,5 @@
        <div class="card- block ">
           <button class="btn btn-danger" (click)="signOut ()">Sign out</button>
        </div>
-    </div>
+    </div> -->
  </div>

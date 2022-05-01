@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ImageModule} from 'primeng/image'
 import { environment } from 'src/environments/environment';
 import {DropdownModule} from 'primeng/dropdown';
-
+import { PasswordModule } from "primeng/password";
 
 const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleusercontent.com';
 @NgModule({
@@ -40,7 +40,8 @@ const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleuser
     BrowserAnimationsModule,
     ImageModule,
     SocialLoginModule,
-    DropdownModule
+    DropdownModule,
+    PasswordModule
   ],
   providers: [
     {
