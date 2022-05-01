@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SocialAuthService } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 import { GoogleLoginProvider } from "angularx-social-login";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   public user: SocialUser = new SocialUser;
   loggedIn: boolean | any;
 
-   	constructor(private authService: SocialAuthService) {}
+   	constructor(private authService: SocialAuthService, private router:Router) {}
   
 
   ngOnInit(): void {
@@ -24,6 +25,8 @@ export class LoginComponent implements OnInit {
   }
   public signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.router.navigateByUrl('/register');
+
   }
   public signOut(): void {
     this.authService.signOut();

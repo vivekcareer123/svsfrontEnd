@@ -11,11 +11,14 @@ import { ContentComponent } from './content/content.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomecontentComponent } from './homecontent/homecontent.component';
+import { RegisterComponent } from './register/register.component';
 import {CalendarModule} from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ImageModule} from 'primeng/image'
 import { environment } from 'src/environments/environment';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleusercontent.com';
 @NgModule({
@@ -26,7 +29,8 @@ const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleuser
     ContentComponent,
     LoginComponent,
     ProfileComponent,
-    HomecontentComponent
+    HomecontentComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleuser
     FormsModule,
     BrowserAnimationsModule,
     ImageModule,
-    SocialLoginModule
+    SocialLoginModule,
+    DropdownModule
   ],
   providers: [
     {
