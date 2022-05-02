@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     //   this.user = user;
     //   console.log(user);
     // });
+    
   }
   public loginUserNamePwd(){
     this.show = false;

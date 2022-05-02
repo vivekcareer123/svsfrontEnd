@@ -1,30 +1,31 @@
-<div class="col-md-7">
+<div class="col-md-7" [formGroup]="userForm">
     <h3>User Registration</h3>
-    <form>
+    <br>
+    
         <div class="form-group">
             <label for="input-username">Username</label>
-            <input type="text" pInputText placeholder="Username" [(ngModel)]="userName" id="loginUsername"
+            <input type="text" pInputText placeholder="Username" [(ngModel)]="user.userName" id="loginUsername"
                 name="loginUsername" class="form-control">
         </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group required">
-                    <label class="control-label" for="input-firstname">First Name</label>
-                    <input type="text" pInputText placeholder="First Name" [(ngModel)]="fName" id="fName" name="fName"
+                    <label class="control-label" for="firstName">First Name</label>
+                    <input type="text" pInputText placeholder="First Name" [(ngModel)]="user.firstName" id="firstName" name="firstName"
                         class="form-control">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group required">
-                    <label class="control-label" for="input-lastname">Last Name</label>
-                    <input type="text" pInputText placeholder="Last Name" [(ngModel)]="lName" id="lName" name="lName"
+                    <label class="control-label" for="lastName">Last Name</label>
+                    <input type="text" pInputText placeholder="Last Name" [(ngModel)]="user.lastName" id="lastName" name="lastName"
                         class="form-control">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="input-email">E-Mail</label>
-            <input type="text" pInputText placeholder="Email Address" [(ngModel)]="emailId" id="emailId" name="emailId"
+            <input type="text" pInputText placeholder="Email Address" [(ngModel)]="user.email" id="email" name="email"
                 class="form-control">
         </div>
         <div class="form-group required">
@@ -34,15 +35,20 @@
         </div>
         <div class="form-group">
             <label for="input-password">Password</label>
-            <p-password [(ngModel)]="password" [toggleMask]="true" id="input-password" name="loginpassword" class="form-control"></p-password>
+            <p-password [(ngModel)]="user.password" [toggleMask]="true" id="input-password" name="loginpassword" class="form-control"></p-password>
+           
+        </div>
+        <div class="form-group">
+            <label for="input-password">Repeat Password</label>
+            <p-password [(ngModel)]="user.passConfirm" [toggleMask]="true" id="input-password" name="passConfirm" class="form-control"></p-password>
            
         </div>
 
         <div id="button-register" class="form-group">
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block visible-xs-block"
-                disabled="disabled">Register</button>
+            <button type="submit" class="btn btn-primary"
+                disabled="disabled" (click)="registerUser()">Register</button>
         </div>
         <input type="hidden" name="redirect" value="">
-    </form>
+  
 </div>
