@@ -4,51 +4,52 @@
     
         <div class="form-group">
             <label for="input-username">Username</label>
-            <input type="text" pInputText placeholder="Username" [(ngModel)]="user.userName" id="loginUsername"
+            <input type="text" pInputText placeholder="Username" formControlName="userName" id="loginUsername"
                 name="loginUsername" class="form-control">
         </div>
+        
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group required">
                     <label class="control-label" for="firstName">First Name</label>
-                    <input type="text" pInputText placeholder="First Name" [(ngModel)]="user.firstName" id="firstName" name="firstName"
+                    <input type="text" pInputText placeholder="First Name" formControlName="firstName" id="firstName" name="firstName"
                         class="form-control">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group required">
                     <label class="control-label" for="lastName">Last Name</label>
-                    <input type="text" pInputText placeholder="Last Name" [(ngModel)]="user.lastName" id="lastName" name="lastName"
+                    <input type="text" pInputText placeholder="Last Name" formControlName="lastName" id="lastName" name="lastName"
                         class="form-control">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="input-email">E-Mail</label>
-            <input type="text" pInputText placeholder="Email Address" [(ngModel)]="user.email" id="email" name="email"
+            <input type="text" pInputText placeholder="Email Address" formControlName="email" id="email" name="email"
                 class="form-control">
         </div>
         <div class="form-group required">
             <label class="control-label" for="input-country">Country</label>
-            <p-dropdown [options]="countries" id="input-country" [(ngModel)]="selectedCountry" optionLabel="name"
+            <p-dropdown [options]="countries" id="input-country" formControlName="country" optionLabel="name"
                 optionValue="code" placeholder="Select a Country"></p-dropdown>
         </div>
         <div class="form-group">
             <label for="input-password">Password</label>
-            <p-password [(ngModel)]="user.password" [toggleMask]="true" id="input-password" name="loginpassword" class="form-control"></p-password>
+            <p-password formControlName="password" [toggleMask]="true" id="input-password" name="loginpassword" class="form-control"></p-password>
            
         </div>
         <div class="form-group">
             <label for="input-password">Repeat Password</label>
-            <p-password [(ngModel)]="user.passConfirm" [toggleMask]="true" id="input-password" name="passConfirm" class="form-control"></p-password>
+            <p-password formControlName="confirm_password" [toggleMask]="true" id="input-password" name="passConfirm" class="form-control"></p-password>
            
         </div>
 
         <div id="button-register" class="form-group">
 
             <button type="submit" class="btn btn-primary"
-                disabled="disabled" (click)="registerUser()">Register</button>
+                 (click)="registerUser()">Register</button>
         </div>
         <input type="hidden" name="redirect" value="">
-  
+
 </div>
