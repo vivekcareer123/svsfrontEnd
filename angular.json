@@ -77,10 +77,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "svsfrontEnd:build:production"
+              "browserTarget": "svsfrontEnd:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "svsfrontEnd:build:development"
+              "browserTarget": "svsfrontEnd:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -89,6 +91,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "svsfrontEnd:build"
+            
           }
         },
         "test": {

@@ -22,7 +22,7 @@ import { PasswordModule } from "primeng/password";
 import { Observable } from 'rxjs';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './commonservice/token-interceptor.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleusercontent.com';
 @NgModule({
@@ -46,7 +46,8 @@ const CLIENT_ID = '579259502924-j6sbr6uefatu8c272h7330qeg0jer603.apps.googleuser
     SocialLoginModule,
     DropdownModule,
     PasswordModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {

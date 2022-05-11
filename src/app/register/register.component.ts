@@ -4,6 +4,9 @@ import {HttpClient} from '@angular/common/http'
 import { User } from '../models/user';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { PasswordValidator } from '../validators/password-validator';
+import { RegisterService } from '../services/register.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { WelcomemessageService } from '../welcomemessage.service';
 
 interface Country {
   name: string,
@@ -21,7 +24,8 @@ export class RegisterComponent implements OnInit {
   data = [];
   user: User = new User;
   selectedCountry: Country|any;
-  constructor(private readonly formBuilder: FormBuilder) { }
+  constructor(private readonly formBuilder: FormBuilder,private registerService : RegisterService, private router: Router,private route:ActivatedRoute,private welcomeservice:WelcomemessageService) { }
+  submitted = false;
 
   ngOnInit(): void {
     
@@ -32,10 +36,18 @@ export class RegisterComponent implements OnInit {
     this.initFormGroups();
   }
   public registerUser(){
-    console.log(this.userForm.value);  
+    this.user.role='customer';
+   this.registerService.registerUser(this.user).subscribe(data => console.log(data), error => console.log(error));
 
   }
 
+  onSubmit() {
+    this.submitted = true;
+    this.registerUser();    
+  }
+  getWelcomeMessage(){
+this.welcomeservice.getWelcomeMessage();
+  }
   initFormGroups(){
     this.userForm = this.formBuilder.group({
       userName: [this.user.userName, [Validators.required, Validators.minLength(3)]],

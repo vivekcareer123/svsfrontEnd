@@ -6,5 +6,6 @@ export class User {
   public lastName: string | any;
   public country: string | any;
   public passConfirm: string | any;
+  public role : String | any;
   constructor() {}
 }
