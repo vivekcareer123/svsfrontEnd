@@ -25,16 +25,16 @@
     <form #f="ngForm">
       <!-- Email input -->
       <div class="form-outline mb-4">
-        <input type="text" pInputText placeholder="Username" [(ngModel)]="loginUsername" id="loginUsername"
-          name="loginUsername">
         <label class="form-label" for="loginUsername">User Name</label>
+        <input type="text" pInputText placeholder="Email ID" [(ngModel)]="loginUsername" id="loginUsername"
+          name="loginUsername">
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-4">
+        <label class="form-label" for="loginpassword">Password</label>
         <p-password [(ngModel)]="loginPassword" [toggleMask]="true" id="loginpassword" name="loginpassword">
         </p-password>
-        <label class="form-label" for="loginpassword">Password</label>
       </div>
 
       <!-- 2 column grid layout for inline styling -->
